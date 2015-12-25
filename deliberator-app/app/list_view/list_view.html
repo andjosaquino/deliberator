@@ -1,6 +1,8 @@
 <p>Candidates:</p>
-<div ng-controller='ListCtrl'>
+<div>
 	<p ng-repeat='candidate in candidates'>
-		{{candidate.firstName}} {{candidate.lastName}}
+		<a href='#/details/{{candidates.indexOf(candidate)}}'>
+			{{candidate.firstName}} {{candidate.lastName}}
+		</a>
 	</p>
 </div>
