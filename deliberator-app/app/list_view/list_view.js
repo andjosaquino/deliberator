@@ -3,7 +3,7 @@
 var list_view = angular.module('ListView', ['ngRoute']);
 
 list_view.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/list_view', {
+  $routeProvider.when('/list-view', {
     templateUrl: 'list_view/list_view.html',
     controller: 'ListCtrl'
   });
