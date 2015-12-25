@@ -9,6 +9,7 @@ detail_view.config(['$routeProvider', function($routeProvider) {
   });
 }])
 
+
 detail_view.controller('DetailCtrl', ['$scope', '$routeParams', 'delib_serv', function($scope, $routeParams, delib_serv) {
 	delib_serv.async().success(function(data){
 		$scope.candidate = data.candidates[$routeParams.candidate_id];
