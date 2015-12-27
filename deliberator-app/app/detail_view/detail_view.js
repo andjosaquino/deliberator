@@ -13,7 +13,6 @@ detail_view.controller('DetailCtrl', ['$scope', '$routeParams', 'delib_serv', fu
 	delib_serv.async().success(function(data){
 		$scope.candidate = data.candidates[$routeParams.candidate_id];
 	});
-	console.log($scope.candidate);
 	// var next_id = Math.floor(Math.random()*delib_serv.undecided.length);
 	// while(next_id === candidate_id){
 	// 	next_id = Math.floor(Math.random()*delib_serv.undecided.length);
