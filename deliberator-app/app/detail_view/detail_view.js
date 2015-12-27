@@ -1,5 +1,10 @@
 'use strict';
 
+//Returns a random value between 0 and n-1 inclusive
+var random_num = function(n){
+	return Math.floor(Math.random() * n);
+}
+
 var detail_view = angular.module('DetailView', ['ngRoute', 'Deliberator']);
 
 detail_view.config(['$routeProvider', function($routeProvider) {
@@ -10,12 +15,14 @@ detail_view.config(['$routeProvider', function($routeProvider) {
 }])
 
 detail_view.controller('DetailCtrl', ['$scope', '$routeParams', 'delib_serv', function($scope, $routeParams, delib_serv) {
-	delib_serv.async().success(function(data){
+	delib_serv.async.then(function(data){
 		$scope.candidate = data.candidates[$routeParams.candidate_id];
+		var left = data.undecided.length;
+		var next_id = random_num(left);
+		while(next_id == $routeParams.candidate_id){
+			next_id = random_num(left);
+		}
+		$scope.next = next_id;
 	});
-	// var next_id = Math.floor(Math.random()*delib_serv.undecided.length);
-	// while(next_id === candidate_id){
-	// 	next_id = Math.floor(Math.random()*delib_serv.undecided.length);
-	// }
-	// $scope.next = delib_serv.candidates[next_id]
+	
 }]);
