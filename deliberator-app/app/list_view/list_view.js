@@ -1,6 +1,6 @@
 'use strict';
 
-var list_view = angular.module('ListView', ['ngRoute']);
+var list_view = angular.module('ListView', ['ngRoute', 'Deliberator']);
 
 list_view.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/list-view', {
@@ -9,8 +9,9 @@ list_view.config(['$routeProvider', function($routeProvider) {
   });
 }])
 
-list_view.controller('ListCtrl', ['$scope', '$http', function($scope, $http) {
-	$http.get('candidates.json').success(function(data){
+list_view.controller('ListCtrl', ['$scope', 'delib_serv', function($scope, delib_serv) {
+	delib_serv.async().success(function(data){
 		$scope.candidates = data.candidates;
 	});
+	//$scope.undecided = delib_serv.undecided;
 }]);

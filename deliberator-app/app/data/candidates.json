@@ -11,6 +11,24 @@
     "dateApplied": "2/01/16 00:00:00"
     },
 
+    {"firstName": "Yuxiao",
+    "lastName": "Tan",
+    "year": 2016,
+    "major": "CS",
+    "picture": "img.jpg",
+    "resume": "resume.pdf",
+    "dateApplied": "2/01/16 00:00:00"
+    },
+
+    {"firstName": "Deepthi",
+    "lastName": "Krovvidi",
+    "year": 2017,
+    "major": "MechE",
+    "picture": "img.jpg",
+    "resume": "resume.pdf",
+    "dateApplied": "2/01/16 00:00:00"
+    },
+
     {"firstName": "Taylor",
     "lastName": "Schoettle",
     "year": 2017,
