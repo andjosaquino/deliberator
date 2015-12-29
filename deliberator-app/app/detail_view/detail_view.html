@@ -1,5 +1,14 @@
 <div>
-	{{candidate}}
-	<a href='#/details/{{next}}'>NEXT</a>
+  {{candidate}}
+  <a ng-href='#/details/{{next}}'>NEXT</a>
 </div>
+<img src="data/pictures/{{candidate.picture}}" alt="Candidate Photo" width="128" height="128">
+<button type="button" ng-click="resumeVisible=true;" ng-hide="resumeVisible">Show Resume</button>
+<button type="button" ng-click="resumeVisible=false;" ng-show="resumeVisible">Hide Resume</button>
+<pdf-viewer
+        delegate-handle="resume-container"
+        url="pdfUrl"
+        scale="1"
+        show-toolbar="true"
+        ng-show="resumeVisible"></pdf-viewer>
 <a href='#/list-view'>BACK</a>

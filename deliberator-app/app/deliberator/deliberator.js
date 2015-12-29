@@ -1,7 +1,7 @@
-var deliberator = angular.module('Deliberator', ['ngRoute']);
+var deliberator = angular.module('Deliberator', ['ngRoute', 'pdf']);
 
-deliberator.service('delib_serv', ['$http', function($http){
-	this.async = $http.get('data/candidates.json').then(function(response){
-		return { candidates: response.data.candidates, undecided: response.data.candidates };
-	});
+deliberator.service('delibService', ['$http', 'pdfDelegate', '$log', function($http, pdfDelegate, $log){
+	this.getData = function(callback){
+		$http.get('data/candidates.json').then(callback);
+	};
 }]);
