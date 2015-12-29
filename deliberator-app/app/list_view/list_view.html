@@ -1,8 +1,9 @@
-<p>Candidates:</p>
-<div>
-	<p ng-repeat='candidate in candidates'>
-		<a ng-href='#/details/{{candidates.indexOf(candidate)}}'>
-			{{candidate.firstName}} {{candidate.lastName}}
-		</a>
-	</p>
+<div ng-controller='ListCtrl' class="ui grid">
+    <div class="three wide column">
+        <div class="ui secondary vertical pointing menu">
+          <a class="item"  ng-repeat='candidate in candidates'>
+            {{candidate.firstName}} {{candidate.lastName}}
+          </a>
+        </div>
+    </div>
 </div>
