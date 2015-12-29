@@ -8,7 +8,8 @@
     "major": "CS",
     "picture": "img.jpg",
     "resume": "resume.pdf",
-    "dateApplied": "2/01/16 00:00:00"
+    "dateApplied": "2/01/16 00:00:00",
+    "roundStatus": -1
     },
 
     {"firstName": "Yuxiao",
@@ -17,7 +18,8 @@
     "major": "CS",
     "picture": "img.jpg",
     "resume": "resume.pdf",
-    "dateApplied": "2/01/16 00:00:00"
+    "dateApplied": "2/01/16 00:00:00",
+    "roundStatus": -1
     },
 
     {"firstName": "Deepthi",
@@ -26,7 +28,8 @@
     "major": "MechE",
     "picture": "img.jpg",
     "resume": "resume.pdf",
-    "dateApplied": "2/01/16 00:00:00"
+    "dateApplied": "2/01/16 00:00:00",
+    "roundStatus": -1
     },
 
     {"firstName": "Taylor",
@@ -35,7 +38,8 @@
     "major": "CS",
     "picture": "taylorschoettle.jpg",
     "resume": "taylorschoettle.pdf",
-    "dateApplied": "2/01/16 00:00:00"
+    "dateApplied": "2/01/16 00:00:00",
+    "roundStatus": -1
     }
 
   ],

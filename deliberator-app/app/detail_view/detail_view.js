@@ -28,4 +28,7 @@ detail_view.controller('DetailCtrl', ['$scope', '$routeParams', 'delibService', 
 		$scope.next = next_id;
 		pdfDelegate.$getByHandle('resume-container').load('data/resumes/'+$scope.candidate.resume);
     });
+
+    $scope.reject = delibService.reject;
+    $scope.accept = delibService.accept;
 }]);
