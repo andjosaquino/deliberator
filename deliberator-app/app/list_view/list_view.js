@@ -9,9 +9,8 @@ list_view.config(['$routeProvider', function($routeProvider) {
   });
 }])
 
-list_view.controller('ListCtrl', ['$scope', 'delib_serv', function($scope, delib_serv) {
-	delib_serv.async.then(function(data){
-		$scope.candidates = data.candidates;
-		$scope.undecided = data.undecided;
+list_view.controller('ListCtrl', ['$scope', 'delibService', function($scope, delibService) {
+	delibService.getData(function(response){
+		$scope.candidates = response.data.candidates;
 	});
 }]);
