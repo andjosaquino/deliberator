@@ -6,8 +6,9 @@ angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.version',
-  'ListView'
+  'ListView',
+  'DetailView'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/list_view'});
+  $routeProvider.otherwise({redirectTo: '/list-view'});
 }]);
