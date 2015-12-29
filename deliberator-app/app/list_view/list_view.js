@@ -13,4 +13,6 @@ list_view.controller('ListCtrl', ['$scope', 'delibService', function($scope, del
 	delibService.getData(function(response){
 		$scope.candidates = response.data.candidates;
 	});
+
+	$scope.finishRound = delibService.finishRound;
 }]);
