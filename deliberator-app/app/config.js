@@ -19,10 +19,12 @@
             .when("/", {
                 templateUrl: 'detail/detail.html',
                 controller: 'DetailCtrl'
-            }).
-        when("/details/:candidate_id", {
-            templateUrl: 'detail/detail.html',
-            controller: 'DetailCtrl'
-        })
+            })
+            .when("/details/:candidate_id", {
+                templateUrl: 'detail/detail.html',
+                controller: 'DetailCtrl',
+                controllerAs: 'detail'
+            })
+            .otherwise({redirectTo: '/'});
     }
 })();
