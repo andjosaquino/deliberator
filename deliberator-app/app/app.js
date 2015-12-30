@@ -1,8 +1,10 @@
+/**
+ * Main app
+ */
 (function() {
     'use strict';
 
-    // Declare app level module which depends on views, and components
-    angular.module('myApp', [
+    angular.module('app', [
             
             /* Shared modules */
             'app.core',
@@ -14,15 +16,4 @@
 
             'ngRoute'
     ])
-        .config(['$routeProvider', function($routeProvider) {
-          $routeProvider
-            .when("/", {
-              templateUrl: 'detail/detail.html',
-              controller: 'DetailCtrl'
-            }).
-            when("/details/:candidate_id", {
-              templateUrl: 'detail/detail.html',
-              controller: 'DetailCtrl'
-            })
-        }]);
 })();

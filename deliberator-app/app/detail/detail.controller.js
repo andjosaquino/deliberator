@@ -1,3 +1,7 @@
+/**
+ * Detail View Controller
+ * @namespace Controllers
+ */
 (function() {
   'use strict';
 
@@ -5,6 +9,11 @@
         .module('app.detail', ['app.core', 'pdf'])
         .controller('DetailCtrl', DetailCtrl);
 
+    /**
+     * @namespace DetailCtrl
+     * @desc Controller for Detail View
+     * @memberOf Controllers
+     */
     function DetailCtrl($routeParams, candidateService, pdfDelegate) {
         var vm = this;
 
