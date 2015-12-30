@@ -2,8 +2,18 @@
     'use strict';
 
     // Declare app level module which depends on views, and components
-    angular
-        .module('myApp', ['ngRoute','myApp.version','ListView','DetailView'])
+    angular.module('myApp', [
+            
+            /* Shared modules */
+            'app.core',
+            'myApp.version',
+
+            /* Feature Areas */
+            'app.list',
+            'app.detail',
+
+            'ngRoute'
+    ])
         .config(['$routeProvider', function($routeProvider) {
           $routeProvider
             .when("/", {

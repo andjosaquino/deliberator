@@ -2,13 +2,13 @@
     'use strict';
 
     angular
-        .module('ListView', ['ngRoute', 'Deliberator'])
+        .module('app.list', ['app.core'])
         .controller('ListCtrl', ListCtrl);
 
-    function ListCtrl(delibService){
+    function ListCtrl(candidateService){
         var vm = this;
         
-        delibService.getData(function(response){
+        candidateService.getData(function(response){
             vm.candidates = response.data.candidates;
         });
     }

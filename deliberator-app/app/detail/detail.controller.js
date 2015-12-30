@@ -2,19 +2,19 @@
   'use strict';
 
     angular
-        .module('DetailView', ['ngRoute', 'Deliberator', 'pdf'])
+        .module('app.detail', ['app.core', 'pdf'])
         .controller('DetailCtrl', DetailCtrl);
 
-    function DetailCtrl($routeParams, delibService, pdfDelegate) {
+    function DetailCtrl($routeParams, candidateService, pdfDelegate) {
         var vm = this;
 
         /* Bindable Members here */
         vm.candidates = [];
         vm.candidate = {};
-        vm.reject = delibService.reject;
-        vm.accept = delibService.accept;
+        vm.reject = candidateService.reject;
+        vm.accept = candidateService.accept;
 
-        delibService.getData(function(response){
+        candidateService.getData(function(response){
             vm.candidates = response.data.candidates;
             vm.candidate = vm.candidates[$routeParams.candidate_id];
             pdfDelegate.$getByHandle('resume-container').load('data/resumes/'+vm.candidate.resume);
