@@ -23,15 +23,22 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
+  <div class="ui stackable menu">
+    <div class="item">LOGO</div>
+    <a class="item">Features</a>
+    <a class="item">Testimonials</a>
+    <a class="item">Sign-in</a>
+  </div>
+
   <div ng-controller='ListCtrl as list' class="ui grid">
-      <div class="three wide column">
+      <div class="four wide column">
           <div class="ui secondary vertical pointing menu">
             <a href="#/details/{{candidate.id}}" class="item"  ng-repeat='candidate in list.candidates'>
               {{candidate.firstName}} {{candidate.lastName}}
             </a>
           </div>
       </div>
-      <div class="nine wide column">
+      <div class="eight wide column">
           <div ng-view></div>
       </div>
   </div>

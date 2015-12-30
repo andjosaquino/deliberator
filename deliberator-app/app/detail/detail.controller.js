@@ -25,7 +25,7 @@
 
         candidateService.getData(function(response){
             vm.candidates = response.data.candidates;
-            vm.candidate = vm.candidates[$routeParams.candidate_id];
+            vm.candidate = vm.candidates[$routeParams.candidate_id-1];
             pdfDelegate.$getByHandle('resume-container').load('data/resumes/'+vm.candidate.resume);
         });
     }
