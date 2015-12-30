@@ -2,7 +2,9 @@
 {
   "candidates": [
 
-    {"firstName": "Andrew",
+    {
+    "id": "1",
+    "firstName": "Andrew",
     "lastName": "Aquino",
     "year": 2017,
     "major": "CS",
@@ -12,7 +14,9 @@
     "roundStatus": -1
     },
 
-    {"firstName": "Yuxiao",
+    {
+    "id": "2",
+    "firstName": "Yuxiao",
     "lastName": "Tan",
     "year": 2016,
     "major": "CS",
@@ -22,7 +26,9 @@
     "roundStatus": -1
     },
 
-    {"firstName": "Deepthi",
+    {
+    "id": "3",
+    "firstName": "Deepthi",
     "lastName": "Krovvidi",
     "year": 2017,
     "major": "MechE",
@@ -32,7 +38,9 @@
     "roundStatus": -1
     },
 
-    {"firstName": "Taylor",
+    {
+    "id": "4",
+    "firstName": "Taylor",
     "lastName": "Schoettle",
     "year": 2017,
     "major": "CS",
