@@ -27,8 +27,18 @@
          * @desc Gets data from candidate.json
          * @memberOf Factories.CandidateService
          */
-        function getData(callback){
-            $http.get('data/candidates.json').then(callback);
+        function getData(){
+            return $http.get('data/candidates.json')
+                .then(getCandidatesComplete)
+                .catch(getCandidatesFailed);
+
+            function getCandidatesComplete(response) {
+                return response.data;
+            }
+
+            function getCandidatesFailed(error) {
+                console.log("Failed: getCandidates");
+            }
         };
 
         this.roundStatus = { UNDECIDED: -1, REJECT: 0, ACCEPT: 1 };

@@ -16,9 +16,16 @@
      */
     function ListCtrl(candidateService){
         var vm = this;
-        
-        candidateService.getData(function(response){
-            vm.candidates = response.data.candidates;
-        });
+        vm.candidates = [];
+
+        getData();
+
+        function getData() {
+            return candidateService.getData().then(function(data) {
+                console.log(data);
+                vm.candidates = data.candidates;
+                return vm.candidates;
+            });
+        }
     }
 })();

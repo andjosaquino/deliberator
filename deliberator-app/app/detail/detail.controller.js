@@ -18,16 +18,19 @@
         var vm = this;
 
         /* Bindable Members here */
-        vm.candidates = [];
         vm.candidate = {};
         vm.reject = candidateService.reject;
         vm.accept = candidateService.accept;
 
-        candidateService.getData(function(response){
-            vm.candidates = response.data.candidates;
-            vm.candidate = vm.candidates[$routeParams.candidate_id-1];
-            pdfDelegate.$getByHandle('resume-container').load('data/resumes/'+vm.candidate.resume);
-        });
+        getCandidate();
+
+        function getCandidate() {
+            return candidateService.getData().then(function(data) {
+                vm.candidate = data.candidates[$routeParams.candidate_id-1];;
+                pdfDelegate.$getByHandle('resume-container').load('data/resumes/'+vm.candidate.resume);
+                return vm.candidate;
+            });
+        }
     }
 })();
 
