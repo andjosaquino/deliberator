@@ -1,0 +1,17 @@
+<div ng-controller='DetailCtrl as detail'>
+    {{detail.candidate}}
+
+    <img src="data/pictures/{{detail.candidate.picture}}" alt="Candidate Photo" width="128" height="128">
+    <button type="button" ng-click="resumeVisible=true;" ng-hide="resumeVisible">Show Resume</button>
+    <button type="button" ng-click="resumeVisible=false;" ng-show="resumeVisible">Hide Resume</button>
+    <pdf-viewer
+            delegate-handle="resume-container"
+            url="pdfUrl"
+            scale="1"
+            show-toolbar="true"
+            ng-show="resumeVisible"></pdf-viewer>
+    <a href='#/list-view'>BACK</a>
+    <button type="button" ng-click="detail.accept(detail.candidate);">YES</button>
+    <button type="button" ng-click="detail.reject(detail.candidate);">NO</button>
+</div>
+
