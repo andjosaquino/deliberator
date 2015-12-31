@@ -1,6 +1,6 @@
 /**
- * Detail View Controller
- * @namespace Controllers
+ * Detail Module
+ * @namespace Modules
  */
 (function() {
   'use strict';

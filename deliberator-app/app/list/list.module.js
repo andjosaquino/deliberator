@@ -1,6 +1,6 @@
 /**
- * List View Controller
- * @namespace Controller
+ * List Module
+ * @namespace Modules
  */
 (function() {
     'use strict';
