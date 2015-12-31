@@ -19,7 +19,7 @@ var
 
   // node dependencies
   console         = require('better-console'),
-  del             = require('del'),
+  //del             = require('del'),
   fs              = require('fs'),
   path            = require('path'),
   runSequence     = require('run-sequence'),
