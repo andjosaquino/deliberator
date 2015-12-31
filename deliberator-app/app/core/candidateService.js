@@ -22,6 +22,10 @@
 
         ///////////
 
+        var UNDECIDED = -1;
+        var REJECTED  = 0;
+        var ACCEPTED  = 1;
+
         /**
          * @name getData
          * @desc Gets data from candidate.json
@@ -41,8 +45,6 @@
             }
         };
 
-        this.roundStatus = { UNDECIDED: -1, REJECT: 0, ACCEPT: 1 };
-
         /**
          * @name reject
          * @desc removes candidate from further rounds.
@@ -50,7 +52,8 @@
          * @memberOf Factories.CandidateService
          */
         function reject(candidate){
-            console.log("set candidate to a no");
+            candidate.roundStatus = REJECTED;
+            //return $http.put('data/candidates.json', {"candidates": [candidate]});
         };
 
         /**
@@ -60,7 +63,7 @@
          * @memberOf Factories.CandidateService
          */
         function accept(candidate){
-            console.log("set candidate to a yes");
+            console.log("Accepted Candidate");
         };
     }
 })();
