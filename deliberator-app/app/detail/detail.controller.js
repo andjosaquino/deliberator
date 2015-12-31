@@ -6,7 +6,7 @@
   'use strict';
 
     angular
-        .module('app.detail', ['app.core', 'pdf'])
+        .module('app.detail')
         .controller('DetailCtrl', DetailCtrl);
 
     /**

@@ -49,7 +49,6 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
 
-  <!-- Added Semantic JS -->
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="semantic/dist/semantic.min.js"></script>
@@ -60,9 +59,14 @@
   <script src="bower_components/pdfjs-dist/build/pdf.js"></script>
   <script src="bower_components/angular-pdf-viewer/dist/angular-pdf-viewer.min.js"></script>
 
-  <script src="app.js"></script>
+
+  <!-- inject:js -->
+  <!-- Bootstrapping -->
+  <script src="app.module.js"></script>
   <script src="config.js"></script>
+  <script src="list/list.module.js"></script>
   <script src="list/list.controller.js"></script>
+  <script src="detail/detail.module.js"></script>
   <script src="detail/detail.controller.js"></script>
 
   <script src="core/candidateService.js"></script>

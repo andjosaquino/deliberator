@@ -6,7 +6,7 @@
     'use strict';
 
     angular
-        .module('app.list', ['app.core'])
+        .module('app.list')
         .controller('ListCtrl', ListCtrl);
 
     /**
