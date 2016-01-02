@@ -1,0 +1,15 @@
+
+<div ng-controller='ListCtrl as list' class="ui grid">
+      <div class="four wide column">
+          <div class="ui secondary vertical pointing menu">
+            <div class="div" ng-repeat='candidate in list.candidates'>
+              <a class="item" ui-sref=".detail({candidate_id: candidate.id})">
+                {{candidate.firstName}} {{candidate.lastName}}
+              </a>
+            </div>
+          </div>
+      </div>
+      <div class="eight wide column">
+        <div ui-view></div>
+      </div>
+  </div>

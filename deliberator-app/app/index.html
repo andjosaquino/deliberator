@@ -25,23 +25,11 @@
   <![endif]-->
   <div class="ui stackable menu">
     <div class="item">LOGO</div>
-    <a class="item">Features</a>
-    <a class="item">Testimonials</a>
-    <a class="item">Sign-in</a>
+    <a class="item" ui-sref="deliberation">Deliberation</a>
+    <a class="item" ui-sref="overview">Overview</a>
   </div>
 
-  <div ng-controller='ListCtrl as list' class="ui grid">
-      <div class="four wide column">
-          <div class="ui secondary vertical pointing menu">
-            <a href="#/details/{{candidate.id}}" class="item"  ng-repeat='candidate in list.candidates'>
-              {{candidate.firstName}} {{candidate.lastName}}
-            </a>
-          </div>
-      </div>
-      <div class="eight wide column">
-          <div ng-view></div>
-      </div>
-  </div>
+  <div ui-view></div>
 
   <div>Project Deliberator: v<span app-version></span></div>
 
@@ -55,7 +43,8 @@
 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
-  
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
   <script src="bower_components/pdfjs-dist/build/pdf.js"></script>
   <script src="bower_components/angular-pdf-viewer/dist/angular-pdf-viewer.min.js"></script>
 
