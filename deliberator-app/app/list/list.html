@@ -1,12 +1,20 @@
-
 <div ng-controller='ListCtrl as list' class="ui grid">
       <div class="four wide column">
           <div class="ui secondary vertical pointing menu">
-            <div class="div" ng-repeat='candidate in list.candidates'>
-              <a class="item" ui-sref=".detail({candidate_id: candidate.id})">
+              <a 
+                class="item bg-black active" 
+                ng-repeat='candidate in list.candidates'
+                ui-sref=".detail({candidate_id: candidate.id})"
+                ng-class="{'hide':list.$stateParams.candidate_id !== candidate.id}">
+                LIVE: {{candidate.firstName}} {{candidate.lastName}}
+              </a>
+              <a 
+                class="item" 
+                ng-repeat='candidate in list.candidates'
+                ui-sref=".detail({candidate_id: candidate.id})"
+                ui-sref-active="active">
                 {{candidate.firstName}} {{candidate.lastName}}
               </a>
-            </div>
           </div>
       </div>
       <div class="eight wide column">

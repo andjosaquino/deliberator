@@ -14,7 +14,7 @@
      * @desc Controller for Detail View
      * @memberOf Controllers
      */
-    function DetailCtrl($stateParams, candidateService, pdfDelegate) {
+    function DetailCtrl($stateParams, candidateService, pdfDelegate, $state) {
         var vm = this;
 
         /* Bindable Members here */
@@ -22,7 +22,6 @@
         vm.reject = candidateService.reject;
         vm.accept = candidateService.accept;
 
-        console.log($stateParams.candidate_id);
         getCandidate();
 
         function getCandidate() {
