@@ -14,6 +14,7 @@
             'app.list',
             'app.detail',
 
-            'ngRoute'
+            'ngRoute',
+            'ui.router'
     ])
 })();

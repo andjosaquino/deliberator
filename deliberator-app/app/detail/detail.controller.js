@@ -14,7 +14,7 @@
      * @desc Controller for Detail View
      * @memberOf Controllers
      */
-    function DetailCtrl($routeParams, candidateService, pdfDelegate) {
+    function DetailCtrl($stateParams, candidateService, pdfDelegate, $state) {
         var vm = this;
 
         /* Bindable Members here */

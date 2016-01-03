@@ -14,15 +14,16 @@
      * @desc Controller for List View
      * @memberOf Controllers
      */
-    function ListCtrl(candidateService){
+    function ListCtrl($state,$stateParams,candidateService){
         var vm = this;
+        
         vm.candidates = [];
+        vm.$stateParams = $stateParams;
 
         getData();
 
         function getData() {
             return candidateService.getData().then(function(data) {
-                console.log(data);
                 vm.candidates = data.candidates;
                 return vm.candidates;
             });
