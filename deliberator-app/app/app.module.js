@@ -13,6 +13,7 @@
             /* Feature Areas */
             'app.list',
             'app.detail',
+            'app.gallery',
 
             'ngRoute',
             'ui.router'
