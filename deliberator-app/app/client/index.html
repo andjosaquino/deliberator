@@ -12,22 +12,19 @@
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
-  <link rel="stylesheet" href="css/basscss.min.css">
-
   <!-- Added Semantic CSS -->
   <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <link rel="stylesheet" href="css/basscss.min.css">
 </head>
-<body>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<body ng-controller="SignInController as signin">
+
+<!-- Define controller for body. In this example we use only one controller for the scope of entire body. -->
+
   <div id="header" ng-include="'header/header.html'"></div>
-  <div ui-view></div>
+  <div ui-view ng-show="signin.isAuthenticated()"></div>
 
-  <div>Project Deliberator: v<span app-version></span></div>
+  <div class="py2 border-top px2">Project Deliberator: v<span app-version></span></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -37,16 +34,23 @@
   <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="semantic/dist/semantic.min.js"></script>
 
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
   <script src="bower_components/pdfjs-dist/build/pdf.js"></script>
   <script src="bower_components/angular-pdf-viewer/dist/angular-pdf-viewer.min.js"></script>
+  <script src="//cdn.jsdelivr.net/satellizer/0.13.3/satellizer.min.js"></script>
 
   <!-- inject:js -->
   <!-- Bootstrapping -->
   <script src="app.module.js"></script>
+
+  <script src="signin.module.js"></script>
+  <script src="signin.controller.js"></script>
+
   <script src="route-config.js"></script>
   <script src="list/list.module.js"></script>
   <script src="list/list.controller.js"></script>
@@ -55,7 +59,9 @@
   <script src="gallery/gallery.module.js"></script>
   <script src="gallery/gallery.controller.js"></script>
 
+  <script src="core/core.module.js"></script>
   <script src="core/candidateService.js"></script>
+  <script src="core/accountService.js"></script>
 
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>

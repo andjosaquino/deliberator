@@ -55,5 +55,4 @@
           templateUrl: "overview/overview.html"
         })
     }
-
 })();
