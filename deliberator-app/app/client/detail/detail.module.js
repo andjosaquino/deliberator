@@ -6,5 +6,5 @@
   'use strict';
 
     angular
-        .module('app.detail', ['app.core', 'pdf'])
+        .module('app.detail', ['app.core', 'pdf', 'ui.router'])
 })();

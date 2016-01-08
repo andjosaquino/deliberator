@@ -1,12 +1,12 @@
-<div class="border-bottom">
+<div class="border-bottom" ng-controller="HeaderController as header">
     <div class="ui secondary menu py2">
         <a class="item" ui-sref="overview">Overview</a>
         <a class="item" ui-sref="deliberation">Deliberation</a>
         <a class="item" ui-sref="gallery">Gallery</a>
         <div class="right menu">
-            <a class="ui item right" ng-show="!signin.isAuthenticated()" ng-click="signin.authenticate('google')">Sign in</a>
-            <a class="ui item right" ng-show="signin.isAuthenticated()" ng-click="signin.logout()">Logout</a>
-            <a class="ui item right" ng-show="signin.isAuthenticated()" ng-click="">{{signin.user.displayName}}</a>
+            <a class="ui item right" ng-show="!header.isAuthenticated()" ng-click="header.authenticate('google')">Sign in</a>
+            <a class="ui item right" ng-show="header.isAuthenticated()" ng-click="header.logout()">Logout</a>
+            <a class="ui item right" ng-show="header.isAuthenticated()" ng-click="">{{signin.user.displayName}}</a>
         </div>
     </div>
 </div>

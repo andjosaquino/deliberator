@@ -8,7 +8,7 @@
             
             /* Shared modules */
             'app.core',
-            'app.signin',
+            'app.header',
             'myApp.version',
 
             /* Feature Areas */

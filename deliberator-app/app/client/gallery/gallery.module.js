@@ -6,5 +6,5 @@
   'use strict';
 
     angular
-        .module('app.gallery', ['app.core', 'pdf'])
+        .module('app.gallery', ['app.core', 'pdf', 'ui.router'])
 })();

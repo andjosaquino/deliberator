@@ -6,7 +6,7 @@
     'use strict';
 
     angular
-        .module('app.signin', ['app.core','satellizer'])
+        .module('app.header', ['app.core','satellizer'])
         .config(function($authProvider) {
 
         $authProvider.google({

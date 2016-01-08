@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Project Deliberator</title>
+  <title>Recroot</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
@@ -17,12 +17,12 @@
   <link rel="stylesheet" href="css/basscss.min.css">
 </head>
 
-<body ng-controller="SignInController as signin">
+<body>
 
 <!-- Define controller for body. In this example we use only one controller for the scope of entire body. -->
 
   <div id="header" ng-include="'header/header.html'"></div>
-  <div ui-view ng-show="signin.isAuthenticated()"></div>
+  <div ui-view></div>
 
   <div class="py2 border-top px2">Project Deliberator: v<span app-version></span></div>
 
@@ -48,16 +48,20 @@
   <!-- Bootstrapping -->
   <script src="app.module.js"></script>
 
-  <script src="signin.module.js"></script>
-  <script src="signin.controller.js"></script>
+  <script src="header/header.module.js"></script>
+  <script src="header/header.controller.js"></script>
 
   <script src="route-config.js"></script>
   <script src="list/list.module.js"></script>
   <script src="list/list.controller.js"></script>
+  <script src="list/config.route.js"></script>
   <script src="detail/detail.module.js"></script>
   <script src="detail/detail.controller.js"></script>
+  <script src="detail/config.route.js"></script>
   <script src="gallery/gallery.module.js"></script>
   <script src="gallery/gallery.controller.js"></script>
+  <script src="gallery/config.route.js"></script>
+  <script src="overview/config.route.js"></script>
 
   <script src="core/core.module.js"></script>
   <script src="core/candidateService.js"></script>
