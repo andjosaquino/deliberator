@@ -5,7 +5,7 @@
         <a class="item" ui-sref="gallery">Gallery</a>
         <div class="right menu">
             <a class="ui item right" ng-show="!signin.isAuthenticated()" ng-click="signin.authenticate('google')">Sign in</a>
-            <a class="ui item right" ng-show="signin.isAuthenticated()" ng-click="signin.signout()">Logout</a>
+            <a class="ui item right" ng-show="signin.isAuthenticated()" ng-click="signin.logout()">Logout</a>
             <a class="ui item right" ng-show="signin.isAuthenticated()" ng-click="">{{signin.user.displayName}}</a>
         </div>
     </div>

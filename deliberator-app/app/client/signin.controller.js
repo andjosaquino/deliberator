@@ -6,12 +6,15 @@
         .controller('SignInController', SignInController);
 
     function SignInController($auth,AccountService) {
-        // This flag we use to show or hide the button in our HTML.
         var vm = this;
-        
+
         vm.user = {};
-        vm.getProfile = function(){};
-        vm.authenticate = function(provider) {
+        vm.getProfile = getProfile;
+        vm.authenticate = authenticate;
+        vm.logout = logout;
+        vm.isAuthenticated = isAuthenticated;
+
+        function authenticate(provider) {
         $auth.authenticate(provider)
             .then(function(response) {
                 vm.getProfile();
@@ -22,15 +25,15 @@
             });
         };
 
-        vm.isAuthenticated = function(){
+        function isAuthenticated(){
             return $auth.isAuthenticated();
         };
 
-        vm.signout = function(){
+        function logout(){
             $auth.logout();
         };
 
-        vm.getProfile = function(){
+        function getProfile(){
             AccountService.getProfile()
                 .then(function(response){
                     vm.user = response.data;
