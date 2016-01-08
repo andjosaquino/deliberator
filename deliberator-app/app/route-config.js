@@ -47,6 +47,11 @@
           controller: 'DetailCtrl',
           controllerAs: 'detail'
         })
+        .state('gallery', {
+          url: "/gallery",
+          templateUrl:'gallery/gallery.html',
+          controller: 'GalleryCtrl'
+        })
         .state('overview', {
           url: "/overview",
           templateUrl: "overview/overview.html"

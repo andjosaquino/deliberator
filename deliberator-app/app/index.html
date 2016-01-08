@@ -24,11 +24,7 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-  <div class="ui stackable menu">
-    <a class="item" ui-sref="overview">Overview</a>
-    <a class="item" ui-sref="deliberation">Deliberation</a>
-  </div>
-
+  <div id="header" ng-include="'header/header.html'"></div>
   <div ui-view></div>
 
   <div>Project Deliberator: v<span app-version></span></div>
@@ -56,6 +52,8 @@
   <script src="list/list.controller.js"></script>
   <script src="detail/detail.module.js"></script>
   <script src="detail/detail.controller.js"></script>
+  <script src="gallery/gallery.module.js"></script>
+  <script src="gallery/gallery.controller.js"></script>
 
   <script src="core/candidateService.js"></script>
 
