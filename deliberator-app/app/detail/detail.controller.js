@@ -26,7 +26,7 @@
 
         function getCandidate() {
             return candidateService.getData().then(function(data) {
-                vm.candidate = data.candidates[$routeParams.candidate_id-1];
+                vm.candidate = data.candidates[$stateParams.candidate_id - 1];
                 pdfDelegate.$getByHandle('resume-container').load('data/resumes/'+vm.candidate.resume);
                 return vm.candidate;
             });

@@ -29,21 +29,23 @@
     // }
 
     function config($stateProvider, $urlRouterProvider){
-    //
-    // For any unmatched url, redirect to /state1
-    $urlRouterProvider.otherwise("/selection");
+      //
+      // For any unmatched url, redirect to /state1
+      $urlRouterProvider.otherwise("/selection");
       //
       // Now set up the states
       $stateProvider
         .state('deliberation', {
           url: "/deliberation",
           templateUrl: "list/list.html",
-          controller: 'ListCtrl'
+          controller: 'ListCtrl',
+          controllerAs: 'list'
         })
         .state('deliberation.detail', {
           url: "/detail/:candidate_id",
           templateUrl:'detail/detail.html',
-          controller: 'DetailCtrl'
+          controller: 'DetailCtrl',
+          controllerAs: 'detail'
         })
         .state('overview', {
           url: "/overview",
