@@ -5,7 +5,7 @@
         .module('app.header')
         .controller('HeaderController', HeaderController);
 
-    function HeaderController($auth,AccountService) {
+    function HeaderController($auth,$state,$rootScope,AccountService,toaster) {
         var vm = this;
 
         vm.user = {};
@@ -14,15 +14,17 @@
         vm.logout = logout;
         vm.isAuthenticated = isAuthenticated;
 
+        vm.getProfile();
+
         function authenticate(provider) {
-        $auth.authenticate(provider)
-            .then(function(response) {
-                vm.getProfile();
-                console.log("User has been authenticated");
-            })
-            .catch(function(response) {
-                console.log("User has not been authenticated. Something went wrong.");
-            });
+            $auth.authenticate(provider)
+                .then(function(response) {
+                    $state.go('overview');
+                    // toaster.success('You have successfully signed in with ' + provider + '!');
+                })
+                .catch(function(response) {
+                    console.log("User has not been authenticated. Something went wrong.");
+                });
         };
 
         function isAuthenticated(){
@@ -31,16 +33,16 @@
 
         function logout(){
             $auth.logout();
+            $state.go('login');
         };
 
         function getProfile(){
             AccountService.getProfile()
-                .then(function(response){
-                    vm.user = response.data;
+                .success(function(data){
+                    vm.user = data;
+                    $rootScope.user = data;
+                    console.log($rootScope.user);
                 })
-                .catch(function(response){
-                    console.log("bye");
-                });
         };
     }
 })();

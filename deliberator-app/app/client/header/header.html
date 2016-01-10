@@ -6,7 +6,7 @@
         <div class="right menu">
             <a class="ui item right" ng-show="!header.isAuthenticated()" ng-click="header.authenticate('google')">Sign in</a>
             <a class="ui item right" ng-show="header.isAuthenticated()" ng-click="header.logout()">Logout</a>
-            <a class="ui item right" ng-show="header.isAuthenticated()" ng-click="">{{signin.user.displayName}}</a>
+            <a class="ui item right" ng-show="header.isAuthenticated()" ng-click="">{{header.user.displayName}}</a>
         </div>
     </div>
 </div>
