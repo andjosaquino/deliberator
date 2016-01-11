@@ -13,6 +13,7 @@
         vm.authenticate = authenticate;
         vm.logout = logout;
         vm.isAuthenticated = isAuthenticated;
+        vm.isPermittedByTeam = isPermittedByTeam;
 
         vm.getProfile();
 
@@ -29,6 +30,12 @@
 
         function isAuthenticated(){
             return $auth.isAuthenticated();
+        };
+
+        function isPermittedByTeam(){
+            var validEmails = ["tjs323@cornell.edu","aja255@cornell.edu"];
+            var email = vm.user.email;
+            return isAuthenticated() && validEmails.indexOf(email) > -1;
         };
 
         function logout(){

@@ -10,33 +10,51 @@
 
         vm.user = {};
         vm.authenticate = authenticate;
-        vm.getProfile = getProfile;
         vm.isAuthenticated = isAuthenticated;
 
         function authenticate(provider) {
-        $auth.authenticate(provider)
-            .then(function(response) {
-                vm.getProfile();
-                console.log("User has been authenticated");
-            })
-            .catch(function(response) {
+            $auth.authenticate(provider)
+                .then(function(response){
+                    checkPermission(response);
+                })
+                .catch(function(response){
+                    catchErrorWithAuth(response);
+                });
+
+            //////
+
+            function checkPermission(response){
+                AccountService.getProfile()
+                    .then(function(response){
+                        vm.user = response.data;
+                        if(isPermittedByTeam(vm.user.email)){
+                            $state.go("overview");
+                        }
+                        else{
+                            logout();
+                        }
+                    })
+                    .catch(function(response){
+                        console.log("Could not retreive profile data..");
+                    });
+            }
+
+            function catchErrorWithAuth(response){
                 console.log("User has not been authenticated. Something went wrong.");
-            });
+            }
         };
 
         function isAuthenticated(){
             return $auth.isAuthenticated();
         };
 
-        function getProfile(){
-            AccountService.getProfile()
-                .then(function(response){
-                    console.log("response:");
-                    console.log(response);
-                    vm.user = response.data;
-                })
-                .catch(function(response){
-                });
+        function isPermittedByTeam(email){
+            return (email == "aja255@cornell.edu");
+        };
+
+        function logout(){
+            $auth.logout();
+            $state.go('login');
         };
     }
 })();

@@ -1,4 +1,4 @@
-<div class="border-bottom" ng-controller="HeaderController as header">
+<div class="border-bottom" ng-controller="HeaderController as header" ng-show="header.isPermittedByTeam()">
     <div class="ui secondary menu py2">
         <a class="item" ui-sref="overview">Overview</a>
         <a class="item" ui-sref="deliberation">Deliberation</a>
