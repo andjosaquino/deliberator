@@ -49,7 +49,9 @@
         };
 
         function isPermittedByTeam(email){
-            return (email == "aja255@cornell.edu");
+            var validEmails = ["tjs323@cornell.edu","aja255@cornell.edu"];
+            var email = vm.user.email;
+            return isAuthenticated() && validEmails.indexOf(email) > -1;
         };
 
         function logout(){
