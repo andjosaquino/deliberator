@@ -46,11 +46,14 @@
           templateUrl:'detail/detail.html',
           controller: 'DetailCtrl',
           controllerAs: 'detail'
+<<<<<<< HEAD
+=======
         })
         .state('gallery', {
           url: "/gallery",
           templateUrl:'gallery/gallery.html',
           controller: 'GalleryCtrl'
+>>>>>>> master
         })
         .state('overview', {
           url: "/overview",

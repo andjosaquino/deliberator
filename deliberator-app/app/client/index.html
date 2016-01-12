@@ -6,28 +6,25 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Project Deliberator</title>
+  <title>Recroot</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
   <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app.css">
-  <link rel="stylesheet" href="css/basscss.min.css">
-
   <!-- Added Semantic CSS -->
-  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.16/toaster.min.css" rel="stylesheet" />
 
-  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="css/basscss.min.css">
 </head>
+
 <body>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<!-- Define controller for body. In this example we use only one controller for the scope of entire body. -->
+  <toaster-container></toaster-container>
   <div id="header" ng-include="'header/header.html'"></div>
   <div ui-view></div>
-
-  <div>Project Deliberator: v<span app-version></span></div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
@@ -37,25 +34,43 @@
   <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="semantic/dist/semantic.min.js"></script>
 
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.16/toaster.min.js"></script>
   <script src="bower_components/angular-route/angular-route.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-
   <script src="bower_components/pdfjs-dist/build/pdf.js"></script>
   <script src="bower_components/angular-pdf-viewer/dist/angular-pdf-viewer.min.js"></script>
+  <script src="//cdn.jsdelivr.net/satellizer/0.13.3/satellizer.min.js"></script>
 
   <!-- inject:js -->
   <!-- Bootstrapping -->
   <script src="app.module.js"></script>
-  <script src="route-config.js"></script>
+
+  <script src="login/login.module.js"></script>
+  <script src="login/config.route.js"></script>
+  <script src="login/login.controller.js"></script>
+
+
+  <script src="header/header.module.js"></script>
+  <script src="header/header.controller.js"></script>
+
   <script src="list/list.module.js"></script>
   <script src="list/list.controller.js"></script>
+  <script src="list/config.route.js"></script>
   <script src="detail/detail.module.js"></script>
   <script src="detail/detail.controller.js"></script>
+  <script src="detail/config.route.js"></script>
   <script src="gallery/gallery.module.js"></script>
   <script src="gallery/gallery.controller.js"></script>
+  <script src="gallery/config.route.js"></script>
+  <script src="overview/config.route.js"></script>
 
+  <script src="core/core.module.js"></script>
   <script src="core/candidateService.js"></script>
+  <script src="core/accountService.js"></script>
 
   <script src="components/version/version.js"></script>
   <script src="components/version/version-directive.js"></script>
