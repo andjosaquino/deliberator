@@ -20,13 +20,15 @@
         .state('login', {
           url: "/login",
           templateUrl: "login/login.html",
+          controller: 'LoginController',
+          controllerAs: 'login',
           resolve: {
             skipIfAuthenticated: _skipIfAuthenticated
           }
         })
     }
 
-    function _skipIfAuthenticated($q, $state, $auth, toaster) {
+    function _skipIfAuthenticated($q, $state, $auth) {
         var defer = $q.defer();
         if($auth.isAuthenticated()) {
           defer.reject(); /* (1) */

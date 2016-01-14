@@ -23,7 +23,7 @@
         })
     }
 
-    function _redirectIfNotAuthenticated($q, $state, $auth, $timeout, toaster) {
+    function _redirectIfNotAuthenticated($q, $state, $auth, $timeout) {
       var defer = $q.defer();
       if($auth.isAuthenticated()) {
         defer.resolve();
