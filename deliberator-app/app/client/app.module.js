@@ -19,9 +19,7 @@
 
             'ngRoute',
             'ui.router',
-            'satellizer',
-            'ngAnimate',
-            'toaster'
+            'satellizer'
     ])
     .config(function($authProvider) {
 

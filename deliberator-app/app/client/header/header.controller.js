@@ -5,7 +5,7 @@
         .module('app.header')
         .controller('HeaderController', HeaderController);
 
-    function HeaderController($auth,$state,$rootScope,AccountService,toaster) {
+    function HeaderController($auth,$state,$rootScope,AccountService) {
         var vm = this;
 
         vm.user = {};
