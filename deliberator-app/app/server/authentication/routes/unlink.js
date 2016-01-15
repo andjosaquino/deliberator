@@ -2,7 +2,7 @@
 
 var router = require('express').Router();
 var User = require('../user');
-var ensureAuthenticated = require('../middleware.js').ensureAuthenticated;
+var ensureAuthenticated = require('../middleware').ensureAuthenticated;
 
 router.use(ensureAuthenticated);
 router.post('/', postUnlink);
