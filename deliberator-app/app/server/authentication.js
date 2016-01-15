@@ -3,7 +3,6 @@ var cors = require('cors');
 var express = require('express');
 var logger = require('morgan');
 var path = require('path');
-
 var meRouter = require('./routes/me');
 var loginRouter = require('./routes/login');
 var signupRouter = require('./routes/signup');

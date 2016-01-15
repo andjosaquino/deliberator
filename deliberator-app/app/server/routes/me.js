@@ -1,4 +1,3 @@
-
 // routes for '/api/me'
 
 var router = require('express').Router();

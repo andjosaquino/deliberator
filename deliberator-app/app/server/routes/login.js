@@ -1,4 +1,3 @@
-
 // routes for '/auth/login'
 
 var router = require('express').Router();

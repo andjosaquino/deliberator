@@ -1,4 +1,3 @@
-
 // routes for '/auth/signup'
 
 var router = require('express').Router();
